@@ -1,0 +1,28 @@
+{
+  "name": "opendrives_test",
+  "version": "1.0.0",
+  "description": "Please read this whole README before starting.",
+  "main": "server.js",
+  "scripts": {
+    "test": "export NODE_ENV=test && jasmine",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chuckydarn/codetest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chuckydarn/codetest/issues"
+  },
+  "homepage": "https://github.com/chuckydarn/codetest#readme",
+  "devDependencies": {
+    "jasmine": "^3.4.0",
+    "request": "^2.88.0"
+  },
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1"
+  }
+}
