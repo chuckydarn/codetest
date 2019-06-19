@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "export NODE_ENV=test && jasmine",
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",

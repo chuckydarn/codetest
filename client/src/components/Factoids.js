@@ -74,20 +74,20 @@ class Factoids extends Component {
 
   render() {
     return (
-      <div>
+      <div className="factoids">
         <div>
           <ul>
             {this.state.factoids.filter(factoid => factoid.dogId === this.props.dogId).map(factoid =>
-              <li key={factoid.id}>
+              <li key={factoid.id} className="fact">
                 {factoid.factoid}
-                <button type="submit" onClick={(e, id) => {this.handleDelete(e, factoid.id)}}>X</button>
+                <button className="button" type="submit" onClick={(e, id) => {this.handleDelete(e, factoid.id)}}>✖️</button>
               </li>
             )}
           </ul>
         </div>
-        <form onSubmit={(e) => this.handleSubmit(e)}>
+        <form className="form" onSubmit={(e) => this.handleSubmit(e)}>
           <input type="text" value={this.state.newFactoid} onChange={(e) => {this.handleChange(e)}} placeholder="Enter New Factoid" />
-          <button type="submit">Create</button>
+          <button type="submit">Add</button>
         </form>
       </div>
     );
