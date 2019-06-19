@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Factoids from './components/Factoids';
 import './App.css';
 
 class App extends Component {
@@ -24,12 +25,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <ul>
+      <div className="app">
+        <div className="card">
           {this.state.dogs.map(dog =>
-            <li key={dog.id}>{dog.name}</li>
+            <div key={dog.id}>
+              <h3>This is {dog.name}.</h3>
+              <img src={require(`./assets/${dog.name}.png`)} alt={dog.name}></img>
+              <Factoids dogId={dog.id} />
+            </div>
           )}
-        </ul>
+        </div>
       </div>
     );
   }

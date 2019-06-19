@@ -6,7 +6,7 @@ const routeConfig = require("./config/route-config.js");
 
 app.use(cors());
 
-appConfig.init();
+appConfig.init(app);
 routeConfig.init(app);
 
 module.exports = app;
