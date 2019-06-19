@@ -25,14 +25,26 @@ class App extends Component {
   }
 
   prev() {
+    let pixels;
+    if(window.innerWidth <= 1000){
+      pixels = 300;
+    } else {
+      pixels = 400;
+    }
     this.setState({
-      transform: this.state.transform + 400
+      transform: this.state.transform + pixels
     })
   }
 
   next() {
+    let pixels;
+    if(window.innerWidth <= 1000){
+      pixels = 300;
+    } else {
+      pixels = 400;
+    }
     this.setState({
-      transform: this.state.transform - 400
+      transform: this.state.transform - pixels
     })
   }
 
