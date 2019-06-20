@@ -75,10 +75,10 @@ class Factoids extends Component {
   render() {
     return (
       <div className="factoids">
-        <div>
+        <div className="factoids-body">
           <ul>
             {this.state.factoids.filter(factoid => factoid.dogId === this.props.dogId).map(factoid =>
-              <li key={factoid.id} className="fact">
+              <li key={factoid.id} className="factoid">
                 {factoid.factoid}
                 <button className="button delete-btn" type="submit" onClick={(e, id) => {this.handleDelete(e, factoid.id)}}><span role="img" aria-label="Delete">✕</span></button>
               </li>
