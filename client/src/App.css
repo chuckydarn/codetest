@@ -47,6 +47,11 @@ table {
 	border-spacing: 0;
 }
 
+body {
+	background-color: #f8f8f8;
+	font-family: 'Roboto', sans-serif;
+}
+
 button:hover {
   cursor: pointer;
 }
@@ -56,77 +61,115 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('https://render.fineartamerica.com/images/rendered/default/print/8.000/4.000/break/images-medium-5/dog-paw-cat-paw-kitten-vector-seamless-pattern-wallpaper-background-cnuisin.jpg');
+	flex-direction: column;
+}
+
+.app-body {
+	flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
   display: flex;
   width: 400px;
   overflow: hidden;
-  background-color: #e5ffe5;
-  box-shadow: 1px 1px 4px 1px black;
-  border-radius: 4px;
+	border-radius: 32px;
+	box-shadow: 0 16px 30px 0 rgba(0,0,0,0.16);
 }
 
 .card {
   min-width: 400px;
+	padding-top: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Montserrat', sans-serif;
   transition: transform .5s ease-in-out;
-  position: relative;
+	background: linear-gradient(170deg, white 50%, #ff5c00 50%, #e44ed5 100%);
 }
 
 .button {
   background-color: transparent;
   padding: 0;
   border: none;
-  transition: transform .25s ease-in-out;
-}
-
-.button:hover {
-  transform: scale(1.1);
 }
 
 .transition-btn {
-  position: absolute;
-  font-size: 25px;
+  position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+  font-size: 32px;
+	line-height: 100%;
+	width: 64px;
+	height: 64px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
 }
 
 .transition-btn.left {
-  left: 10px;
+  left: 40px;
 }
 
 .transition-btn.right {
-  right: 10px;
+  right: 40px;
+}
+
+.transition-btn:hover {
+	background-color: white;
+	box-shadow: 0 16px 30px 0 rgba(0,0,0,0.16);
 }
 
 .card-content {
   width: 300px;
+	text-align: center;
 }
 
 .card-title {
   font-weight: 500;
-  font-size: 2em;
+  font-size: 1em;
+	text-transform: uppercase;
+	color: rgba(0,0,0,0.5);
   padding: 16px 0;
-  color: #026440;
+	display: flex;
+	flex-direction: column;
+}
+
+.card-title span {
+	font-weight: 900;
+	font-size: 2.4em;
+	text-transform: none;
+	color: black;
+	margin-top: 8px;
 }
 
 .card-img {
-  width: 100%;
-  border-radius: 4px;
+  width: 75%;
+  border-radius: 50%;
 }
 
 .factoids {
+	color: white;
   padding: 16px 0;
-  font-size: 16px;
+  font-size: 1.25em;
+	line-height: 120%;
 }
 
 .fact {
   display: flex;
   justify-content: space-between;
   padding: 4px 0;
+}
+
+.delete-btn {
+	color: white;
+	transform: scale(1.1);
+}
+
+.delete-btn:hover {
+	transform: scale(1.3);
 }
 
 .form {
@@ -138,26 +181,43 @@ button:hover {
 .form input {
   box-sizing: border-box;
   width: 100%;
-  height: 32px;
+  height: 48px;
   padding: 12px;
+	padding-right: 48px;
   border: none;
-  border: solid 1px #ccc;
-  border-radius: 4px;
+  border-radius: 24px;
   font-size: 16px;
 }
 
 .form button {
-  height: 100%;
-  margin-right: -4px;
-  padding: 0 8px;
-  background-color: #026440;
+  height: 48px;
+	width: 48px;
+  background-color: #e44ed5;
   color: white;
-  border: none;
-  border-radius: 0 4px 4px 0;
+  border: 4px solid white;
+  border-radius: 50%;
   position: absolute;
   top: 0;
   right: 0;
   font-size: 16px;
+}
+
+footer {
+	padding: 24px 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+footer span {
+	text-transform: uppercase;
+	font-size: 13px;
+}
+
+a {
+	color: #6b29f8;
 }
 
 /* MEDIA QUERIES */
@@ -166,7 +226,7 @@ button:hover {
   /* For mobile phones: */
 	.container {
 	  width: 300px;
-	} 
+	}
 
 	.card {
 	  min-width: 300px;

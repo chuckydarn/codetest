@@ -57,30 +57,36 @@ class App extends Component {
     let nextBtn;
 
     if(this.state.transform !== 0) {
-      prevBtn = <button className="button transition-btn left" onClick={() => this.prev()}>&#11071;</button>
+      prevBtn = <button className="button transition-btn left" onClick={() => this.prev()}><span role="img" aria-label="Previous">👈</span></button>
     }
 
     if(this.state.transform >= ((this.state.dogs.length-2)*-400)) {
-      nextBtn = <button className="button transition-btn right" onClick={() => this.next()}>&#10547;</button>
+      nextBtn = <button className="button transition-btn right" onClick={() => this.next()}><span role="img" aria-label="Next">👉</span></button>
     }
 
     return (
       <div className="app">
-        <div className="container">
-          {this.state.dogs.map(dog =>
-            <div className="card" style={style} key={dog.id}>
-              {prevBtn}
+        <div className="app-body">
+          <div className="container">
+            {prevBtn}
+            {this.state.dogs.map(dog =>
+              <div className="card" style={style} key={dog.id}>
 
-              <div className="card-content">
-                <h3 className="card-title">This is {dog.name}.</h3>
-                <img className="card-img" src={require(`./assets/${dog.name}.png`)} alt={dog.name}></img>
-                <Factoids dogId={dog.id} />
+
+                <div className="card-content">
+                  <h3 className="card-title">This is <span>{dog.name}</span></h3>
+                  <img className="card-img" src={require(`./assets/${dog.name}.png`)} alt={dog.name}></img>
+                  <Factoids dogId={dog.id} />
+                </div>
               </div>
-
-              {nextBtn}
-            </div>
-          )}
+            )}
+            {nextBtn}
+          </div>
         </div>
+        <footer>
+          <span>Cuteness Overload Courtsey of <a href="https://twitter.com/dog_rates" target="_blank">@Dog_rates</a></span>
+          <span>Built by <a href="chuckydarn.com" target="_blank">Charlie Haag</a></span>
+        </footer>
       </div>
     );
   }

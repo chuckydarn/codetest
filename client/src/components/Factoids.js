@@ -80,14 +80,14 @@ class Factoids extends Component {
             {this.state.factoids.filter(factoid => factoid.dogId === this.props.dogId).map(factoid =>
               <li key={factoid.id} className="fact">
                 {factoid.factoid}
-                <button className="button" type="submit" onClick={(e, id) => {this.handleDelete(e, factoid.id)}}><span role="img" aria-label="Delete">✖️</span></button>
+                <button className="button delete-btn" type="submit" onClick={(e, id) => {this.handleDelete(e, factoid.id)}}><span role="img" aria-label="Delete">✕</span></button>
               </li>
             )}
           </ul>
         </div>
         <form className="form" onSubmit={(e) => this.handleSubmit(e)}>
           <input type="text" value={this.state.newFactoid} onChange={(e) => {this.handleChange(e)}} placeholder="Enter New Factoid" />
-          <button type="submit">Add</button>
+          <button type="submit"><span role="img" aria-label="Add">➕</span></button>
         </form>
       </div>
     );
