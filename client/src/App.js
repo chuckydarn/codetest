@@ -85,7 +85,7 @@ class App extends Component {
         </div>
         <footer>
           <span>Cuteness Overload Courtsey of <a href="https://twitter.com/dog_rates" target="_blank">@Dog_rates</a></span>
-          <span>Built by <a href="chuckydarn.com" target="_blank">Charlie Haag</a></span>
+          <span>Built by <a href="http://www.chuckydarn.com" target="_blank">Charlie Haag</a></span>
         </footer>
       </div>
     );
