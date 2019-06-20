@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   getDogs() {
-    fetch(`http://localhost:9000/dogs`)
+    fetch(`https://chuckydarn-opendrives.herokuapp.com/dogs`)
     .then(res => res.json())
     .then(body => this.setState({ dogs: body.dogs })
     )

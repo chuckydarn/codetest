@@ -19,7 +19,7 @@ class Factoids extends Component {
   }
 
   getFactoids() {
-    fetch(`http://localhost:9000/factoids`)
+    fetch(`https://chuckydarn-opendrives.herokuapp.com/factoids`)
     .then(res => res.json())
     .then(body => this.setState({ factoids: body.factoids })
     )
@@ -33,7 +33,7 @@ class Factoids extends Component {
   handleSubmit(e) {
     e.preventDefault();
     if(!this.state.newFactoid){return};
-    fetch(`http://localhost:9000/factoids/create`, {
+    fetch(`https://chuckydarn-opendrives.herokuapp.com/factoids/create`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ class Factoids extends Component {
   }
 
   handleDelete(e, id) {
-    fetch(`http://localhost:9000/factoids/${id}/destroy`, {
+    fetch(`https://chuckydarn-opendrives.herokuapp.com/factoids/${id}/destroy`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
